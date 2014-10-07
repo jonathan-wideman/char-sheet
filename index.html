@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="charSheet">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+
+    <body class="container-fluid" ng-controller="SheetController as sheet">
+
+        <div class="row">
+            <div ng-class="{'jw-debug-area': sheet.debugArea}" class="col-md-4">
+                <div class="row" ng-repeat="stat in sheet.stats">
+                    <div class="jw-stat-key-bulb">
+                        <span class="center-block text-center jw-stat-key-bulb-value jw-text-stat">{{stat.value}}</span>
+                    </div>
+                    <div class="jw-stat-key-trunk">
+                        <span class="center-block text-center jw-stat-key-trunk-label jw-text-label">{{stat.name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div ng-class="{'jw-debug-area': sheet.debugArea}" class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4" ng-repeat="stat in sheet.boxStats">
+                        <div class="center-block jw-stat-box-plain">
+                            <span class="center-block text-center jw-stat-box-plain-value jw-text-stat">{{stat.value}}</span>
+                            <span class="center-block text-center jw-stat-box-plain-label jw-text-label-small">{{stat.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-class="{'jw-debug-area': sheet.debugArea}" class="col-md-4">
+                <div class="jw-panel">
+                    <div class="row" ng-repeat="skill in sheet.skills">
+                        <input class="col-md-2" type="checkbox" value="">
+                        <span class="col-md-1 jw-text-stat">{{skill.value}}</span>
+                        <span class="col-md-2 jw-text-label-grey">({{skill.ability | capitalize}})</span>
+                        <span class="col-md-7 jw-text-label">{{skill.name | capitalize}}</span>
+                    </div>
+                    <div class="jw-panel-label-bottom jw-text-label text-center">{{ 'skills' | uppercase}}</div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,13 @@
+
+- higlight related stats on hover:
+    - option one:
+        green - uses hovered stat
+        blue - used in hovered stat
+        - change alpha based on degree of seperation:
+            ~ 70% - immediate
+            ~ 40% - secondary or more
+    - option two:
+        - also display formula on hover
+        - pick colors for each var in formula
+        - higlight those vars on page and in formula
+        - higlight secondary as above?
