@@ -2,6 +2,7 @@
     var app = angular.module('charSheet', []);
 
     app.controller('SheetController', function(){
+        this.abilities = abilities;
         this.stats = stats;
         this.skills = skills;
         this.saves = saves;
@@ -14,6 +15,15 @@
             return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
         }
     });
+
+    var abilities = [
+        { name: 'Strength',         abbreviation: 'STR',    value: 14,  modifier: '+2' },
+        { name: 'Dexterity',        abbreviation: 'DEX',    value: 14,  modifier: '+2' },
+        { name: 'Constitution',     abbreviation: 'CON',    value: 14,  modifier: '+2' },
+        { name: 'Intelligence',     abbreviation: 'INT',    value: 14,  modifier: '+2' },
+        { name: 'Wisdom',           abbreviation: 'WIS',    value: 14,  modifier: '+2' },
+        { name: 'Charisma',         abbreviation: 'CHA',    value: 14,  modifier: '+2' },
+    ];
 
     var saves = [
         { name: 'Strength',         value: 2 },
@@ -46,12 +56,6 @@
     ]
 
     var stats = [
-        // { name: 'Strength', abbreviation: 'STR' },
-        // { name: 'Dexterity', abbreviation: 'DEX' },
-        // { name: 'Constitution', abbreviation: 'CON' },
-        // { name: 'Intelligence', abbreviation: 'INT' },
-        // { name: 'Wisdom', abbreviation: 'WIS' },
-        // { name: 'Charisma', abbreviation: 'CHA' },
         { name: 'Inspiration', abbreviation: '?', value: '1'},
         { name: 'Proficiency Bonus', abbreviation: '?', value: '+2'},
         { name: 'Passive Wisdom (Perception)', abbreviation: '?', value: '14'},

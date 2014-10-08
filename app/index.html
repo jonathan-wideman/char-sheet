@@ -23,6 +23,16 @@
                     </div>
                 </div>
 
+                <div class="row" ng-repeat="ability in sheet.abilities">
+                    <div class="center-block jw-stat-box-tall">
+                        <span class="center-block text-center jw-stat-box-tall-label jw-text-label-small">{{ability.name}}</span>
+                        <span class="center-block text-center jw-stat-box-tall-value jw-text-stat-lg">{{ability.modifier}}</span>
+                        <div class="jw-stat-box-tall-gem">
+                            <span class="center-block text-center jw-stat-box-tall-gem-value jw-text-stat">{{ability.value}}</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- /column -->
 
