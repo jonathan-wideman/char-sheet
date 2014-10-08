@@ -4,6 +4,7 @@
     app.controller('SheetController', function(){
         this.stats = stats;
         this.skills = skills;
+        this.saves = saves;
         this.boxStats = boxStats;
         this.debugArea = false;
     });
@@ -13,6 +14,15 @@
             return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
         }
     });
+
+    var saves = [
+        { name: 'Strength',         value: 2 },
+        { name: 'Dexterity',        value: 2 },
+        { name: 'Constitution',     value: 2 },
+        { name: 'Intelligence',     value: 2 },
+        { name: 'Wisdom',           value: 2 },
+        { name: 'Charisma',         value: 2 },
+    ]
 
     var skills = [
         { name: 'acrobatics',       ability: 'dex',     value: 2 },
